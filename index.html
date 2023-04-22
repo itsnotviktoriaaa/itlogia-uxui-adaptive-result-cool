@@ -1,0 +1,653 @@
+<!--<?php-->
+
+<!--use common\models\IntensiveLesson;-->
+<!--use common\models\IntensiveStream;-->
+<!--use common\models\User;-->
+<!--use frontend\assets\IntensiveFrontAsset;-->
+<!--use frontend\assets\OwlCarouselAsset;-->
+<!--use frontend\helpers\FormHelper;-->
+<!--use frontend\models\IntensiveRequestForm;-->
+<!--use yii\helpers\Url;-->
+<!--use yii\widgets\ActiveForm;-->
+
+<!--/* @var $this yii\web\View */-->
+<!--/* @var $model IntensiveRequestForm */-->
+<!--/* @var $user User */-->
+<!--/* @var $intensiveStream IntensiveStream */-->
+<!--/* @var $intensiveDuration integer */-->
+<!--/* @var $lessons IntensiveLesson [] */-->
+<!--/* @var $startDate string */-->
+<!--/* @var $endDate string */-->
+
+<!--$this->title = 'Онлайн-интенсив Frontend Start - Айтилогия';-->
+<!--$description =-->
+<!--"Разработай Frontend-проект с нуля за 7 дней!";-->
+<!--$this->registerMetaTag([-->
+<!--'name' => 'description',-->
+<!--'content' => $description], 'description');-->
+<!--$this->registerMetaTag([-->
+<!--'property' => 'og:title',-->
+<!--'content' => $this->title], 'og:title');-->
+<!--$this->registerMetaTag([-->
+<!--'property' => 'og:description',-->
+<!--'content' => $description], 'og:description');-->
+
+<!--OwlCarouselAsset::register($this);-->
+<!--IntensiveFrontAsset::register($this);-->
+<!--?>-->
+
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Онлайн-интенсив UX/UI Start - Айтилогия</title>
+    <link rel="stylesheet" href="owlcarousel/owl.carousel.min.css">
+    <link rel="stylesheet" href="owlcarousel/owl.theme.default.min.css">
+    <link rel="stylesheet" href="styles/intensive-common.css">
+</head>
+<body>
+
+<div class="intensive">
+    <header class="header">
+        <div class="header-container container">
+            <img src="images/intensives/new-logo.png" alt="">
+        </div>
+    </header>
+    <div class="main">
+        <div class="main-container container">
+            <div class="main-information">
+                <h1 class="main-title">
+                    UX/UI
+                    <!--                    <span>2.0</span>-->
+                </h1>
+                <div class="main-title-additional">
+                    <div class="main-title-additional-info uxui">
+                        Создай 5 дизайн-проектов с нуля за 7 дней
+                    </div>
+                    <div class="main-title">
+                        Start
+                    </div>
+                </div>
+                <div class="stats">
+                    <div class="stat-item">
+                        <svg width="22" height="14" viewBox="0 0 22 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                  d="M2 0H14C15.1046 0 16 0.89543 16 2V3.38197L22 0.381966V13.618L16 10.618V12C16 13.1046 15.1046 14 14 14H2C0.89543 14 0 13.1046 0 12V2C0 0.89543 0.89543 0 2 0ZM16 8.38197L20 10.382V3.61803L16 5.61803V8.38197ZM2 2V12H14V2H2Z"
+                                  fill="#1E1A2B"/>
+                        </svg>
+                        онлайн-интенсив с практикой
+                        <!--                        <?= file_get_contents(Yii::getAlias('@webroot') . '/images/intensives/icons/video.svg') ?>-->
+                        <!--                        онлайн-интенсив с практикой-->
+                    </div>
+                    <div class="stat-item">
+                        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                  d="M11 22C4.92487 22 0 17.0751 0 11C0 4.92487 4.92487 0 11 0C17.0751 0 22 4.92487 22 11C22 17.0751 17.0751 22 11 22ZM11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM16 10H12V5H10V12H16V10Z"
+                                  fill="#1E1A2B"/>
+                        </svg>
+                        14-25 апреля
+                        <!--                        <?= file_get_contents(Yii::getAlias('@webroot') . '/images/intensives/icons/time.svg') ?>-->
+                        <!--                        <?= Yii::$app->formatter->asDate($startDate, 'd') . ' - ' .-->
+                        <!--                        Yii::$app->formatter->asDate($endDate, 'd MMMM') ?>-->
+                    </div>
+                </div>
+                <div class="main-description">
+                    <ul class="main-description-list">
+                        <li class="main-description-item">Освоишь на базовом уровне Figma</li>
+                        <li class="main-description-item">Разберешься с UX и UI дизайном и интерфейсами</li>
+                        <li class="main-description-item">Узнаешь, как создавать трендовый дизайн</li>
+                        <li class="main-description-item">Научишься создавать адаптивный дизайн</li>
+                    </ul>
+                    <div class="price">
+                        <div class="price-amount">
+                            <div class="main-price">
+                                6 990 ₽
+                                <!--                            <?php-->
+                                <!--                            if (stripos(Yii::$app->request->hostName, '.online') > -1) : ?>-->
+                                <!--                            80 $-->
+                                <!--                            <?php else: ?>-->
+                                <!--                            6 990 ₽-->
+                                <!--                            <?php endif; ?>-->
+                            </div>
+                            <div class="end-price uxui">
+                                Бесплатно!
+                            </div>
+                        </div>
+                    </div>
+                    <div class="main-image-block">
+                        <img class="main-image" src="images/intensives/uxui/author-main.png?v=1" alt="">
+                        <img class="main-image-adaptive" src="images/intensives/uxui/author-main-375.png" alt="">
+                        <div class="main-image-description">
+                            <span>Ольга Чернова,</span>
+                            автор и преподаватель курса
+                        </div>
+                    </div>
+                </div>
+                <a class="btn btn-primary btn-basic sliding-link" href="#registration">Принять участие</a>
+            </div>
+        </div>
+    </div>
+    <div class="book">
+        <div class="book-container container">
+            <div class="book-text">
+                <div class="book-title">
+                    Зарегистрируйтесь <br class="book-br"> на интенсив прямо сейчас и получите
+                    <span class="uxui">подарок!</span>
+                </div>
+                <div class="book-description">Чек-лист «45 мест для поиска работы», где собраны все ресурсы, на которых
+                    UX/UI-дизайнеры находят работу в веб-студиях и IT-компаниях
+                </div>
+                <div class="button-block">
+                    <a class="btn btn-primary btn-basic sliding-link" href="#registration">Принять участие</a>
+                    <img src="images/intensives/small-gift-box.png" alt="">
+                    <div class="info ixui">
+                        Кликай и регистрируйся!
+                    </div>
+                </div>
+            </div>
+            <img class="book-image" src="images/intensives/uxui/book-big.png" alt="">
+        </div>
+    </div>
+    <div class="program">
+        <div class="program-container container">
+            <div class="program-wrapper">
+                <div class="main-title">Программа интенсива</div>
+                <div class="program-items">
+                    <div class="program-item">
+                        <div class="program-item-day">
+                            <!--                            <?= file_get_contents(Yii::getAlias('@webroot') . '/images/intensives/icons/video.svg') ?>-->
+                            <!--                            День 1-->
+                            <svg width="22" height="14" viewBox="0 0 22 14" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                      d="M2 0H14C15.1046 0 16 0.89543 16 2V3.38197L22 0.381966V13.618L16 10.618V12C16 13.1046 15.1046 14 14 14H2C0.89543 14 0 13.1046 0 12V2C0 0.89543 0.89543 0 2 0ZM16 8.38197L20 10.382V3.61803L16 5.61803V8.38197ZM2 2V12H14V2H2Z"
+                                      fill="white"/>
+                            </svg>
+                            День 1
+                        </div>
+                        <div class="program-item-title">
+                            Знакомство с миром UX/UI-дизайна и профессией
+                        </div>
+                        <ul class="program-item-list">
+                            <li class="program-item-list-item">Чем занимается UX/UI-дизайнер</li>
+                            <li class="program-item-list-item">Какими навыками нужно владеть</li>
+                            <li class="program-item-list-item">Сколько можно зарабатывать и как работать</li>
+                            <li class="program-item-list-item">Зарегистрируетесь в Figma и настроите её</li>
+                        </ul>
+                    </div>
+                    <div class="program-item">
+                        <div class="program-item-day">
+                            <!--                            <?= file_get_contents(Yii::getAlias('@webroot') . '/images/intensives/icons/video.svg') ?>-->
+                            <!--                            День 2-->
+                            <svg width="22" height="14" viewBox="0 0 22 14" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                      d="M2 0H14C15.1046 0 16 0.89543 16 2V3.38197L22 0.381966V13.618L16 10.618V12C16 13.1046 15.1046 14 14 14H2C0.89543 14 0 13.1046 0 12V2C0 0.89543 0.89543 0 2 0ZM16 8.38197L20 10.382V3.61803L16 5.61803V8.38197ZM2 2V12H14V2H2Z"
+                                      fill="white"/>
+                            </svg>
+                            День 2
+                        </div>
+                        <div class="program-item-title">
+                            Знакомство с миром UX/UI-дизайна и профессией
+                        </div>
+                        <ul class="program-item-list">
+                            <li class="program-item-list-item">Чем занимается UX/UI-дизайнер</li>
+                            <li class="program-item-list-item">Какими навыками нужно владеть</li>
+                            <li class="program-item-list-item">Сколько можно зарабатывать и как работать</li>
+                            <li class="program-item-list-item">Зарегистрируетесь в Figma и настроите её</li>
+                        </ul>
+                    </div>
+                    <div class="program-item">
+                        <div class="program-item-day">
+                            <!--                            <?= file_get_contents(Yii::getAlias('@webroot') . '/images/intensives/icons/video.svg') ?>-->
+                            <!--                            День 3-->
+                            <svg width="22" height="14" viewBox="0 0 22 14" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                      d="M2 0H14C15.1046 0 16 0.89543 16 2V3.38197L22 0.381966V13.618L16 10.618V12C16 13.1046 15.1046 14 14 14H2C0.89543 14 0 13.1046 0 12V2C0 0.89543 0.89543 0 2 0ZM16 8.38197L20 10.382V3.61803L16 5.61803V8.38197ZM2 2V12H14V2H2Z"
+                                      fill="white"/>
+                            </svg>
+                            День 3
+                        </div>
+                        <div class="program-item-title">
+                            Знакомство с миром UX/UI-дизайна и профессией
+                        </div>
+                        <ul class="program-item-list">
+                            <li class="program-item-list-item">Чем занимается UX/UI-дизайнер</li>
+                            <li class="program-item-list-item">Какими навыками нужно владеть</li>
+                            <li class="program-item-list-item">Сколько можно зарабатывать и как работать</li>
+                            <li class="program-item-list-item">Зарегистрируетесь в Figma и настроите её</li>
+                        </ul>
+                    </div>
+                    <div class="program-item">
+                        <div class="program-item-day">
+                            <!--                            <?= file_get_contents(Yii::getAlias('@webroot') . '/images/intensives/icons/video.svg') ?>-->
+                            <!--                            День 4-->
+                            <svg width="22" height="14" viewBox="0 0 22 14" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                      d="M2 0H14C15.1046 0 16 0.89543 16 2V3.38197L22 0.381966V13.618L16 10.618V12C16 13.1046 15.1046 14 14 14H2C0.89543 14 0 13.1046 0 12V2C0 0.89543 0.89543 0 2 0ZM16 8.38197L20 10.382V3.61803L16 5.61803V8.38197ZM2 2V12H14V2H2Z"
+                                      fill="white"/>
+                            </svg>
+                            День 4
+                        </div>
+                        <div class="program-item-title">
+                            Знакомство с миром UX/UI-дизайна и профессией
+                        </div>
+                        <ul class="program-item-list">
+                            <li class="program-item-list-item">Чем занимается UX/UI-дизайнер</li>
+                            <li class="program-item-list-item">Какими навыками нужно владеть</li>
+                            <li class="program-item-list-item">Сколько можно зарабатывать и как работать</li>
+                            <li class="program-item-list-item">Зарегистрируетесь в Figma и настроите её</li>
+                        </ul>
+                    </div>
+                    <div class="program-item">
+                        <div class="program-item-day">
+                            <!--                            <?= file_get_contents(Yii::getAlias('@webroot') . '/images/intensives/icons/video.svg') ?>-->
+                            <!--                            День 5-->
+                            <svg width="22" height="14" viewBox="0 0 22 14" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                      d="M2 0H14C15.1046 0 16 0.89543 16 2V3.38197L22 0.381966V13.618L16 10.618V12C16 13.1046 15.1046 14 14 14H2C0.89543 14 0 13.1046 0 12V2C0 0.89543 0.89543 0 2 0ZM16 8.38197L20 10.382V3.61803L16 5.61803V8.38197ZM2 2V12H14V2H2Z"
+                                      fill="white"/>
+                            </svg>
+                            День 5
+                        </div>
+                        <div class="program-item-title">
+                            Знакомство с миром UX/UI-дизайна и профессией
+                        </div>
+                        <ul class="program-item-list">
+                            <li class="program-item-list-item">Чем занимается UX/UI-дизайнер</li>
+                            <li class="program-item-list-item">Какими навыками нужно владеть</li>
+                            <li class="program-item-list-item">Сколько можно зарабатывать и как работать</li>
+                            <li class="program-item-list-item">Зарегистрируетесь в Figma и настроите её</li>
+                        </ul>
+                    </div>
+                    <div class="program-item">
+                        <div class="program-item-day">
+                            <!--                            <?= file_get_contents(Yii::getAlias('@webroot') . '/images/intensives/icons/video.svg') ?>-->
+                            <!--                            День 6-->
+                            <svg width="22" height="14" viewBox="0 0 22 14" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                      d="M2 0H14C15.1046 0 16 0.89543 16 2V3.38197L22 0.381966V13.618L16 10.618V12C16 13.1046 15.1046 14 14 14H2C0.89543 14 0 13.1046 0 12V2C0 0.89543 0.89543 0 2 0ZM16 8.38197L20 10.382V3.61803L16 5.61803V8.38197ZM2 2V12H14V2H2Z"
+                                      fill="white"/>
+                            </svg>
+                            День 6
+                        </div>
+                        <div class="program-item-title">
+                            Знакомство с миром UX/UI-дизайна и профессией
+                        </div>
+                        <ul class="program-item-list">
+                            <li class="program-item-list-item">Чем занимается UX/UI-дизайнер</li>
+                            <li class="program-item-list-item">Какими навыками нужно владеть</li>
+                            <li class="program-item-list-item">Сколько можно зарабатывать и как работать</li>
+                            <li class="program-item-list-item">Зарегистрируетесь в Figma и настроите её</li>
+                        </ul>
+                    </div>
+                    <div class="program-item">
+                        <div class="program-item-day">
+                            <!--                            <?= file_get_contents(Yii::getAlias('@webroot') . '/images/intensives/icons/video.svg') ?>-->
+                            <!--                            День 7-->
+                            <svg width="22" height="14" viewBox="0 0 22 14" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                      d="M2 0H14C15.1046 0 16 0.89543 16 2V3.38197L22 0.381966V13.618L16 10.618V12C16 13.1046 15.1046 14 14 14H2C0.89543 14 0 13.1046 0 12V2C0 0.89543 0.89543 0 2 0ZM16 8.38197L20 10.382V3.61803L16 5.61803V8.38197ZM2 2V12H14V2H2Z"
+                                      fill="white"/>
+                            </svg>
+                            День 7
+                        </div>
+                        <div class="program-item-title">
+                            Знакомство с миром UX/UI-дизайна и профессией
+                        </div>
+                        <ul class="program-item-list">
+                            <li class="program-item-list-item">Чем занимается UX/UI-дизайнер</li>
+                            <li class="program-item-list-item">Какими навыками нужно владеть</li>
+                            <li class="program-item-list-item">Сколько можно зарабатывать и как работать</li>
+                            <li class="program-item-list-item">Зарегистрируетесь в Figma и настроите её</li>
+                        </ul>
+                    </div>
+                    <div class="program-item uxui">
+                        <div class="program-item-day uxui">
+                            <div class="program-item-day-plus">+</div>
+                        </div>
+                        <div class="program-item-plus">
+                            + ценные бонусы, которые вы получите в самих уроках
+                        </div>
+                        <div class="plus-gift">
+                            <img src="images/intensives/uxui/box.svg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="program-background background-top">
+            <img src="images/intensives/uxui/ui-start-background.png" alt="">
+        </div>
+        <div class="program-background background-bottom">
+            <img src="images/intensives/uxui/ui-start-background.png" alt="">
+        </div>
+    </div>
+    <div class="project">
+        <div class="project-container">
+            <div class="project-title container">
+                Примеры проектов, <br> которые <span class="uxui">вы создадите</span> во время интенсива
+                <div class="project-buttons">
+                    <button class="custom-button custom-prev-btn">
+                        <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7 1L1 7L7 13" stroke="#ECBDCF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <button class="custom-button custom-next-btn">
+                        <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 13L7 7L1 0.999999" stroke="#ECBDCF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div class="project-overview">
+                <div class="owl-carousel owl-theme">
+                    <div class="project-item"></div>
+                    <div class="project-item">
+                        <img src="images/intensives/uxui/project_1.png" alt="">
+                    </div>
+                    <div class="project-item">
+                        <img src="images/intensives/uxui/project_2.png" alt="">
+                    </div>
+                    <div class="project-item">
+                        <img src="images/intensives/uxui/project_3.png" alt="">
+                    </div>
+                    <div class="project-item">
+                        <img src="images/intensives/uxui/project_3.png" alt="">
+                    </div>
+                    <div class="project-item">
+                        <img src="images/intensives/uxui/project_3.png" alt="">
+                    </div>
+                    <div class="project-item">
+                        <img src="images/intensives/uxui/project_3.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="certificate">
+        <div class="certificate-container container">
+            <div class="certificate-wrapper"></div>
+            <div class="main-title">
+                Вы получите <span class="uxui">сертификат</span>
+                <div class="description">После окончания интенсива и успешной сдачи всех домашних работ</div>
+                <div class="certificate-image">
+                    <img src="images/intensives/uxui/UI%20заглушка%201.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="author">
+        <div class="author-container container">
+            <div class="author-description">
+                <div class="author-title">Интенсив проведет Ольга Чернова</div>
+                <div class="author-position uxui">UX/UI дизайнер и сооснователь онлайн-школы Айтилогия</div>
+                <div class="about-author">
+                    <div class="about-author-items">
+                        <div class="about-author-item">
+                            <div class="about-author-item-li uxui"><span>С 2017 года</span> работаю UX/UI-дизайнером и продолжаю развиваться в сфере</div>
+                            <div class="about-author-item-li uxui">Проектировала и создавала дизайн <span>обучающей IT-платформы</span> Айтилогии с геймификацией</div>
+                        </div>
+                        <div class="about-author-item">
+                            <div class="about-author-item-li uxui">Начинала карьеру с работы в веб-студиях, затем ушла на фриланс, а сейчас работаю UX/UI (Product) дизайнером <span>в своей же компании</span></div>
+                            <div class="about-author-item-li uxui">Под моим руководством начинающие веб-дизайнеры создали с нуля уже <span>более 4000</span> дизайн-макетов!</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="author-image">
+                <img src="images/intensives/uxui/author.png" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="registration">
+        <div class="registration-container container">
+            <div class="registration-wrapper">
+                <div class="registration-text-block">
+                    <div class="registration-title main-title">Регистрируйтесь на интенсив</div>
+                    <div class="stats">
+                        <div class="stat-item">
+                            <svg width="22" height="14" viewBox="0 0 22 14" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                      d="M2 0H14C15.1046 0 16 0.89543 16 2V3.38197L22 0.381966V13.618L16 10.618V12C16 13.1046 15.1046 14 14 14H2C0.89543 14 0 13.1046 0 12V2C0 0.89543 0.89543 0 2 0ZM16 8.38197L20 10.382V3.61803L16 5.61803V8.38197ZM2 2V12H14V2H2Z"
+                                      fill="white"/>
+                            </svg>
+                            онлайн-интенсив с практикой
+                            <!--                        <?= file_get_contents(Yii::getAlias('@webroot') . '/images/intensives/icons/video.svg') ?>-->
+                            <!--                        онлайн-интенсив с практикой-->
+                        </div>
+                        <div class="stat-item">
+                            <svg width="22" height="22" viewBox="0 0 22 22" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                      d="M11 22C4.92487 22 0 17.0751 0 11C0 4.92487 4.92487 0 11 0C17.0751 0 22 4.92487 22 11C22 17.0751 17.0751 22 11 22ZM11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM16 10H12V5H10V12H16V10Z"
+                                      fill="white"/>
+                            </svg>
+                            14-25 апреля
+                            <!--                        <?= file_get_contents(Yii::getAlias('@webroot') . '/images/intensives/icons/time.svg') ?>-->
+                            <!--                        <?= Yii::$app->formatter->asDate($startDate, 'd') . ' - ' .-->
+                            <!--                        Yii::$app->formatter->asDate($endDate, 'd MMMM') ?>-->
+                        </div>
+                    </div>
+                    <div class="price">
+                        <div class="price-amount">
+                            <div class="main-price">
+                                6 990 ₽
+                                <!--                            <?php-->
+                                <!--                            if (stripos(Yii::$app->request->hostName, '.online') > -1) : ?>-->
+                                <!--                            80 $-->
+                                <!--                            <?php else: ?>-->
+                                <!--                            6 990 ₽-->
+                                <!--                            <?php endif; ?>-->
+                            </div>
+                            <div class="end-price uxui">
+                                Бесплатно!
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="registration-form-block">
+                    <div class="registration-form-wrapper">
+                        <div class="registration-form-block-title uxui">
+                            Записаться на интенсив
+                        </div>
+                        <!--                        <?php $form =-->
+                        <!--                        ActiveForm::begin(['id' => 'intensive-form', 'options' => ['class' => 'site-form']]); ?>-->
+                        <!--                        <div class="form-error"><?= $model->hasErrors() ? FormHelper::getAllErrors($model->getErrors()) :-->
+                        <!--                            '' ?></div>-->
+                        <!--                        <?php if (!$user || !$user->name) : ?>-->
+                        <!--                        <div class="input-block">-->
+                        <!--                            <input type="text" id="name" name="IntensiveRequestForm[name]" placeholder=" "-->
+                        <!--                                   value="<?= $model->name ?>">-->
+                        <!--                            <label for="user-name">Ваше имя</label>-->
+                        <!--                            <div class="error-text"></div>-->
+                        <!--                        </div>-->
+                        <!--                        <?php endif; ?>-->
+                        <!--                        <div class="input-block">-->
+                        <!--                            <input type="email" id="email" name="IntensiveRequestForm[email]"-->
+                        <!--                                   placeholder=" " value="<?= $user ? $user->email : $model->email ?>"-->
+                        <!--                            <?= (!$user) ?: 'disabled' ?>>-->
+                        <!--                            <label for="user-mail-contact">Ваш e-mail</label>-->
+                        <!--                            <div class="error-text"></div>-->
+                        <!--                        </div>-->
+                        <!--                        <button type="submit" class="btn btn-primary btn-basic <?= $model->agreeData ?-->
+                        <!--                        '' : 'disabled' ?>" id="intensive-submit" <?= $model->agreeData ?-->
+                        <!--                        '' : 'disabled' ?>>Принять участие-->
+                        <!--                        </button>-->
+                        <!--                        <div id="intensive-form-agree">-->
+                        <!--                            <input class="custom-checkbox" id="intensive-agree-data" name="IntensiveRequestForm[agreeData]"-->
+                        <!--                                   type="checkbox" value="1">-->
+                        <!--                            <label for="intensive-agree-data">-->
+                        <!--                                Я даю <a href="<?= Url::toRoute(['law/agree-base']) ?>" target="_blank">согласие</a> на-->
+                        <!--                                обработку персональных данных и принимаю <a-->
+                        <!--                                    href="<?= Url::toRoute(['law/privacy-policy']) ?>"-->
+                        <!--                                    target="_blank">политику конфиденциальности</a>-->
+                        <!--                            </label>-->
+                        <!--                        </div>-->
+                        <!--                        <?php ActiveForm::end(); ?>-->
+                        <form id="intensive-form" class="site-form" action="/intensive/front" method="post">
+                            <div class="input-block">
+                                <input type="text" id="name" name="IntensiveRequestForm[name]" placeholder="Имя"
+                                       value="">
+                                <div class="error-text"></div>
+                            </div>
+                            <div class="input-block">
+                                <input type="email" id="email" name="IntensiveRequestForm[email]"
+                                       placeholder="Электронная почта" value="">
+                                <div class="error-text"></div>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-basic" id="intensive-submit">Принять участие</button>
+                            <div id="intensive-form-agree">
+                                <input class="custom-checkbox" id="intensive-agree-data"
+                                       name="IntensiveRequestForm[agreeData]"
+                                       type="checkbox" value="1">
+                                <label for="intensive-agree-data">
+                                    Нажимая на кнопку, я соглашаюсь с <a href="/law/privacy-policy" target="_blank">
+                                    политикой конфиденциальности </a> и принимаю условия
+                                    <a href="/law/public-offer" target="_blank">публичной оферты</a>
+                                </label>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="registration-gift">
+                        <img src="images/intensives/uxui/book-small.png" alt="">
+                        <div class="registration-gift-text">
+                            После подтверждения участия мы вышлем вам в подарок чек-лист «45 мест для поиска работы»
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="reviews">
+        <div class="reviews-container">
+            <div class="reviews-title container">
+                Отзывы участников
+            </div>
+            <div class="reviews-items">
+                <div id="reviews-items" class="owl-carousel">
+                    <div class="reviews-item">
+                        <img class="preview" src="images/intensives/front/reviews/1.png" alt="">
+                    </div>
+                    <div class="reviews-item">
+                        <img class="preview" src="images/intensives/front/reviews/2.png" alt="">
+                    </div>
+                    <div class="reviews-item">
+                        <img class="preview" src="images/intensives/front/reviews/3.png" alt="">
+                    </div>
+                    <div class="reviews-item">
+                        <img class="preview" src="images/intensives/front/reviews/4.png" alt="">
+                    </div>
+                    <div class="reviews-item">
+                        <img class="preview" src="images/intensives/front/reviews/5.png" alt="">
+                    </div>
+                    <div class="reviews-item">
+                        <img class="preview" src="images/intensives/front/reviews/7.png" alt="">
+                    </div>
+                    <div class="reviews-item">
+                        <img class="preview" src="images/intensives/front/reviews/6.png" alt="">
+                    </div>
+                    <div class="reviews-item">
+                        <img class="preview" src="images/intensives/front/reviews/8.png" alt="">
+                    </div>
+                    <div class="reviews-item">
+                        <img class="preview" src="images/intensives/front/reviews/12.png" alt="">
+                    </div>
+                    <div class="reviews-item">
+                        <img class="preview" src="images/intensives/front/reviews/9.png" alt="">
+                    </div>
+                    <div class="reviews-item">
+                        <img class="preview" src="images/intensives/front/reviews/13.png" alt="">
+                    </div>
+                    <div class="reviews-item">
+                        <img class="preview" src="images/intensives/front/reviews/10.png" alt="">
+                    </div>
+                    <div class="reviews-item">
+                        <img class="preview" src="images/intensives/front/reviews/11.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="advantages">
+        <div class="advantages-container container">
+            <div class="advantages-title">Кайфовые моменты</div>
+            <div class="advantages-list">
+                <div class="advantage-item">
+                    <div class="advantage-description">
+                        Наставники проверяют каждую вашу домашку и дают комментарии по улучшению
+                    </div>
+                    <div class="advantage-image">
+                        <img src="images/intensives/uxui/advantage-mentor.png" alt="">
+                    </div>
+                    <div class="advantage-image-adaptive">
+                        <img src="images/intensives/uxui/advantage-mentor-adaptive.png" alt="">
+                    </div>
+                </div>
+                <div class="advantage-item">
+                    <div class="advantage-description">
+                        Обучение проходит на собственно разработанной
+                        IT-платформе Айтилогии
+                    </div>
+                    <div class="advantage-image">
+                        <img src="images/intensives/uxui/advantage-platform.png" alt="">
+                    </div>
+                    <div class="advantage-image-adaptive">
+                        <img src="images/intensives/uxui/advantage-platform-adaptive.png" alt="">
+                    </div>
+                </div>
+                <div class="advantage-item">
+                    <div class="advantage-description">
+                        Обменяете заработанные Айтикоины на полезные материалы или скидку на полноценное обучение
+                    </div>
+                    <div class="advantage-image">
+                        <img src="images/intensives/uxui/advantage-coins.png" alt="">
+                    </div>
+                    <div class="advantage-image-adaptive">
+                        <img src="images/intensives/uxui/advantage-coins-adaptive.png" alt="">
+                    </div>
+                </div>
+                <div class="advantage-item">
+                    <div class="advantage-description">
+                        Сможете взаимодействовать в чате с другими участниками комьюнити
+                    </div>
+                    <div class="advantage-image">
+                        <img src="images/intensives/uxui/advantage-chat.png" alt="">
+                    </div>
+                    <div class="advantage-image-adaptive">
+                        <img src="images/intensives/uxui/advantage-chat-adaptive.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="container">
+            <div class="logo-container">
+                <img src="images/intensives/new-logo-white.png" alt="">
+                <div class="privacy-title">«Айтилогия» © Все права защищены / <?= date('Y') ?></div>
+            </div>
+            <div class="privacy-laws">
+                <div class="privacy-laws-item"><a href="<?= Url::toRoute(['law/public-offer']) ?>" target="_blank">Публичная
+                    оферта</a>
+                </div>
+                <div class="privacy-laws-item"><a href="<?= Url::toRoute(['law/privacy-policy']) ?>" target="_blank">Политика
+                    конфиденциальности</a></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="owlcarousel/jquery-3.6.4.min.js"></script>
+<script src="owlcarousel/owl.carousel.min.js"></script>
+<script src="scripts/script.js"></script>
+</body>
+</html>
